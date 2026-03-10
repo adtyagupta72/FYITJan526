@@ -254,3 +254,14 @@ newStudent1.name = "Adtya1"
 console.log(newStudent1)
 console.log(student)
 
+let text2 = "How are you"
+console.log(text2.padStart(5, " "))
+console.log(text2.padStart(5, " "))
+
+let numbers = [100, 5, 66]
+for(let i=0; i<numbers.length; i++) 
+{
+    console.log(String(numbers[i]).padStart(10, '0'))
+    console.log(String(numbers[i]).padStart(10, 'abc'))
+    console.log(String(numbers[i]).padStart(10))
+}
