@@ -8,9 +8,10 @@ console.log(string.toLowerCase())
 console.log(string.includes("strong"))
 console.log(string.includes("straw"))
 console.log(string.indexOf("s"))
-console.log(string.slice(3,22))
+console.log(string.slice(3,22).toLowerCase())
 console.log(string.replace("strong","powerful"))
 console.log(string.split(":"))
+//replaceAll
 
 console.log("NUMBER METHODS....")
 let num = 242.7876
