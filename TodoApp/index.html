@@ -5,14 +5,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Todo App</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script> -->
+    <script>
+        console.log("Hello Todo App!")
+
+        function addTodoFunction()
+        {
+            console.log("Add todo called")
+        }
+    </script>
 </head>
 <body>
     <h1>Todo App</h1>
     <br>
     <input placeholder="Enter Todo Title here..."/>
     <br>
-    <button>Add Todo</button>
+    <button onclick="addTodoFunction()">Add Todo</button>
 </body>
 </html>
