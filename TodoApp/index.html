@@ -8,16 +8,32 @@
     <script>
         console.log("Hello Todo App!")
 
+        /*Title, Description, Status, CreatedDate, UpdatedDate, ID, DueDate, Priority*/
+        var todoList = []
+
         function addTodoFunction()
         {
             console.log("Add todo called")
+            let inputText = document.getElementById("todoInputID").value
+            console.log("inputText:", inputText)
+            todoList.push({
+                ID:1,
+                title:inputText,
+                description:"",
+                status:"",
+                createdDate:"",
+                updatedDate:"",
+                dueDate:"",
+                priority:""
+            })
+            console.log("TodoList:", todoList)
         }
     </script>
 </head>
 <body>
     <h1>Todo App</h1>
     <br>
-    <input placeholder="Enter Todo Title here..."/>
+    <input id="todoInputID" placeholder="Enter Todo Title here..."/>
     <br>
     <button onclick="addTodoFunction()">Add Todo</button>
 </body>
