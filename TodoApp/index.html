@@ -15,18 +15,26 @@
         {
             console.log("Add todo called")
             let inputText = document.getElementById("todoInputID").value
-            console.log("inputText:", inputText)
-            todoList.push({
-                ID:1,
-                title:inputText,
-                description:"",
-                status:"",
-                createdDate:"",
-                updatedDate:"",
-                dueDate:"",
-                priority:""
-            })
-            console.log("TodoList:", todoList)
+            if(inputText)
+            {
+                console.log("inputText:", inputText)
+                todoList.push({
+                    ID:1,
+                    title:inputText,
+                    description:"",
+                    status:"",
+                    createdDate:"",
+                    updatedDate:"",
+                    dueDate:"",
+                    priority:""
+                })
+                console.log("TodoList:", todoList)
+                document.getElementById("todoInputID").value = ""
+            }
+            else
+            {
+                alert("Todo title cannot be blank!")
+            }
         }
     </script>
 </head>
