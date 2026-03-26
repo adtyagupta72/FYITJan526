@@ -5,6 +5,19 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Todo App</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        dialog {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Style the backdrop overlay */
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
     <script>
         console.log("Hello Todo App!")
 
@@ -22,27 +35,48 @@
                     ID:1,
                     title:inputText,
                     description:"",
-                    status:"",
+                    completionStatus:"",
                     createdDate:"",
                     updatedDate:"",
                     dueDate:"",
-                    priority:""
+                    priority:"",
+                    todoStatus:""
                 })
                 console.log("TodoList:", todoList)
                 document.getElementById("todoInputID").value = ""
+
+                let todoListID = document.getElementById("todoListID")
+                todoListID.innerHTML = todoListID.innerHTML + "<li> <input type='checkbox'>"+inputText+"</li>"
             }
             else
             {
                 alert("Todo title cannot be blank!")
             }
         }
+
+        function showDialog()
+        {
+            let addTodoDialog = document.getElementById("addTodoDialog")
+            addTodoDialog.showModal()
+        }
+
     </script>
 </head>
 <body>
     <h1>Todo App</h1>
     <br>
-    <input id="todoInputID" placeholder="Enter Todo Title here..."/>
-    <br>
-    <button onclick="addTodoFunction()">Add Todo</button>
+    <button onclick="showDialog()">Add Todo</button><br><br>
+    <ul id="todoListID">
+        <li> <input type="checkbox"> Buy Groceries</li>
+        <li>Complete Homework</li>
+    </ul>
+
+    <dialog id="addTodoDialog">
+        <form>
+            <input id="todoInputID" placeholder="Enter Todo Title here..."/>
+            <br>
+            <button onclick="addTodoFunction()">Add Todo</button><br><br>
+        </form>
+    </dialog>
 </body>
 </html>
