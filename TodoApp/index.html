@@ -28,19 +28,31 @@
         {
             console.log("Add todo called")
             let inputText = document.getElementById("todoInputID").value
+            let todoDescID = document.getElementById("todoDescID").value
+            let todoStatusID = document.getElementById("todoStatusID").value
+            let todoCompletionID = document.getElementById("todoCompletionID").value
+            let todoPriorityID = document.getElementById("todoPriorityID").value
+            let todoDueDateID = document.getElementById("todoDueDateID").value
+            // console.log("inputText: ", inputText)
+            // console.log("todoDescID: ", todoDescID)
+            // console.log("todoStatusID: ", todoStatusID)
+            // console.log("todoCompletionID: ", todoCompletionID)
+            // console.log("todoPriorityID: ", todoPriorityID)
+            // console.log("todoDueDateID: ", todoDueDateID)
+            console.log("Current Date time: ", Date.now())
             if(inputText)
             {
                 console.log("inputText:", inputText)
                 todoList.push({
                     ID:1,
                     title:inputText,
-                    description:"",
-                    completionStatus:"",
-                    createdDate:"",
-                    updatedDate:"",
-                    dueDate:"",
-                    priority:"",
-                    todoStatus:""
+                    description:todoDescID,
+                    completionStatus:todoCompletionID,
+                    createdDate: Date.now(),
+                    updatedDate: Date.now(),
+                    dueDate:todoDueDateID,
+                    priority:todoPriorityID,
+                    todoStatus:todoStatusID
                 })
                 console.log("TodoList:", todoList)
                 document.getElementById("todoInputID").value = ""
@@ -67,16 +79,53 @@
     <br>
     <button onclick="showDialog()">Add Todo</button><br><br>
     <ul id="todoListID">
-        <li> <input type="checkbox"> Buy Groceries</li>
+        <li> 
+            <div style="display: inline-flex;">
+                <input type="checkbox"> 
+                <div style="margin-left: 10px;">
+                    <b>Buy Groceries</b><br>
+                    <small>Description comes here...</small>
+                </div>
+            </div>
+        </li>
         <li>Complete Homework</li>
     </ul>
 
     <dialog id="addTodoDialog">
-        <form>
+
+        <center> <h2>Add a Todo</h2></center>
+
+        <!-- <form> -->
+            <label>Todo Title:</label>
             <input id="todoInputID" placeholder="Enter Todo Title here..."/>
-            <br>
-            <button onclick="addTodoFunction()">Add Todo</button><br><br>
-        </form>
+            <br><br>
+            <label>Todo Description:</label>
+            <input id="todoDescID" placeholder="Enter Todo Description here..."/>
+            <br><br>
+            <input type="checkbox" id="todoCompletionID" />
+            <label>Todo Status:</label>
+            <br><br>
+            <label>Todo Status:</label>
+            <select id="todoStatusID">
+                <option>Todo</option>
+                <option>In-Progress</option>
+                <option>In-Review</option>
+                <option>Done</option>
+            </select>
+            <br><br>
+            <label>Todo Priority:</label>
+            <select id="todoPriorityID">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+            <br><br>
+            <label>Todo Due Date:</label>
+            <input type="date" id="todoDueDateID"/>
+            <br><br>
+
+            <center><button onclick="addTodoFunction()">Add Todo</button><br><br></center>
+        <!-- </form> -->
     </dialog>
 </body>
 </html>
